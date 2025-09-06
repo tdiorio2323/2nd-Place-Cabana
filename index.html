@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cabana Luxury Creator Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;500;700&family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Brand Colors */
+        --primary: 280 100% 70%;
+        --accent: 320 100% 75%;
+        --background: 240 12% 4%;
+        --foreground: 0 0% 98%;
+
+        /* Chrome System */
+        --chrome-platinum: 0 0% 92%;
+        --chrome-silver: 0 0% 80%;
+        --chrome-dark: 0 0% 25%;
+        --chrome-black: 0 0% 8%;
+
+        /* Neon Accents */
+        --neon-blue: 205 100% 65%;
+        --neon-red: 0 100% 60%;
+        --electric-pink: 325 100% 70%;
+        --cyber-purple: 270 100% 75%;
+
+        /* Holographic */
+        --holo-pink: 330 90% 68%;
+        --holo-purple: 270 90% 68%;
+        --holo-blue: 205 90% 68%;
+        --holo-cyan: 180 90% 68%;
+        --holo-gold: 45 95% 68%;
+
+        /* Glass Effects */
+        --glass-surface: 240 10% 8%;
+        --glass-border: 240 8% 18%;
+        --glass-tint: 280 100% 70%;
+
+        /* Gradients */
+        --gradient-luxury: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+        --gradient-chrome: linear-gradient(135deg, hsl(var(--chrome-platinum)) 0%, hsl(var(--chrome-silver)) 50%, hsl(var(--chrome-dark)) 100%);
+        --gradient-holographic: conic-gradient(from 45deg, hsl(var(--holo-pink)), hsl(var(--holo-purple)), hsl(var(--holo-blue)), hsl(var(--holo-cyan)), hsl(var(--holo-gold)), hsl(var(--holo-pink)));
+        --gradient-glass: linear-gradient(135deg, hsla(var(--glass-tint), 0.08) 0%, hsla(330, 100%, 50%, 0.12) 50%, hsla(var(--primary), 0.08) 100%);
+      
+        /* Shadows */
+        --shadow-luxury: 0 32px 64px -12px hsla(var(--primary), 0.4), 0 0 0 1px hsla(var(--primary), 0.05);
+        --shadow-chrome: 0 12px 40px hsla(0,0%,0%,0.5), inset 0 2px 0 hsla(0,0%,100%,0.15);
+        --shadow-glass: 0 16px 40px hsla(var(--primary), 0.2), 0 0 0 1px hsla(0,0%,100%,0.1);
+        --shadow-glow: 0 0 60px hsla(var(--primary), 0.4), 0 0 120px hsla(var(--primary), 0.2);
+      }
+      
+      @keyframes holo-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes holo-shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: 'hsl(var(--primary))',
+              accent: 'hsl(var(--accent))',
+              background: 'hsl(var(--background))',
+              foreground: 'hsl(var(--foreground))',
+              chrome: {
+                platinum: 'hsl(var(--chrome-platinum))',
+                silver: 'hsl(var(--chrome-silver))',
+                dark: 'hsl(var(--chrome-dark))',
+                black: 'hsl(var(--chrome-black))'
+              },
+              neon: {
+                blue: 'hsl(var(--neon-blue))',
+                red: 'hsl(var(--neon-red))',
+                pink: 'hsl(var(--electric-pink))',
+                purple: 'hsl(var(--cyber-purple))'
+              },
+              holo: {
+                pink: 'hsl(var(--holo-pink))',
+                purple: 'hsl(var(--holo-purple))',
+                blue: 'hsl(var(--holo-blue))',
+                cyan: 'hsl(var(--holo-cyan))',
+                gold: 'hsl(var(--holo-gold))'
+              },
+              glass: {
+                surface: 'hsl(var(--glass-surface))',
+                border: 'hsl(var(--glass-border))',
+                tint: 'hsl(var(--glass-tint))'
+              }
+            },
+            backgroundImage: {
+              'gradient-luxury': 'var(--gradient-luxury)',
+              'gradient-chrome': 'var(--gradient-chrome)',
+              'gradient-holographic': 'var(--gradient-holographic)',
+              'gradient-glass': 'var(--gradient-glass)'
+            },
+            boxShadow: {
+              luxury: 'var(--shadow-luxury)',
+              chrome: 'var(--shadow-chrome)',
+              glass: 'var(--shadow-glass)',
+              glow: 'var(--shadow-glow)'
+            },
+            fontFamily: {
+              luxury: ['Montserrat', 'Poppins', 'system-ui', 'sans-serif'],
+              display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+              script: ['Dancing Script', 'cursive']
+            },
+            animation: {
+              'holo-spin': 'holo-spin 5s linear infinite',
+              'holo-shift': 'holo-shift 10s ease infinite',
+            },
+            backgroundSize: {
+              '400%': '400% 400%',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body class="bg-background">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
